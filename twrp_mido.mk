@@ -20,8 +20,5 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 4
 PRODUCT_MANUFACTURER := Xiaomi
 
-export OF_MAINTAINER=Teletubies
-export TZ=Asia/Jakarta
-
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/mido/device.mk)
