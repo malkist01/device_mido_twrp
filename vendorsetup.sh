@@ -18,7 +18,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="cap_sprout"
+FDEVICE="mido"
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
    if [ -n "$chkdev" ]; then
@@ -34,32 +34,25 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-
- # Fox-specific flags
- export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
- ##export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/bootdevice/by-name/recovery_a"
- 
  
  # OrangeFox Addons
- export FOX_ENABLE_APP_MANAGER=1
-
- # Binaries & Tools
- export FOX_USE_BASH_SHELL=1
- export FOX_ASH_IS_BASH=1
- export FOX_USE_NANO_EDITOR=1
- export FOX_USE_TAR_BINARY=1
- export FOX_USE_SED_BINARY=1
- export FOX_USE_XZ_UTILS=1
- ##export FOX_REPLACE_BUSYBOX_PS=1
-
+ 	export FOX_USE_BASH_SHELL=1
+	export FOX_ASH_IS_BASH=1
+	export FOX_USE_NANO_EDITOR=1
+	export FOX_USE_TAR_BINARY=1
+	export FOX_USE_SED_BINARY=1
+	export FOX_USE_LZ4_BINARY=1
+	export FOX_USE_ZSTD_BINARY=1
+	export FOX_USE_XZ_UTILS=1
+	export FOX_ENABLE_APP_MANAGER=1
+	export FOX_USE_DATE_BINARY=1
+	export FOX_BASH_TO_SYSTEM_BIN=1
+ 
  # Version & Variant
- export FOX_VERSION="R12.1"
- export FOX_VARIANT="A14"
- export FOX_BUILD_TYPE="Stable"
-
- # A/B partitioning
- export FOX_AB_DEVICE=1
- ##export FOX_VIRTUAL_AB_DEVICE=1
+   export FOX_VERSION="R11.3_1"
+   export FOX_VARIANT="A12"
+   export FOX_BUILD_TYPE="Stable"
+   export OF_MAINTAINER=Teletubies
  
  # Store settings at /data/recovery instead of internal storage
  ##export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
