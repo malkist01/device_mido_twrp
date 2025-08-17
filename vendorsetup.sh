@@ -49,10 +49,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_BASH_TO_SYSTEM_BIN=1
  
  # Version & Variant
-   export FOX_VERSION="R11.3_1"
+   export FOX_MAINTAINER_PATCH_VERSION="12"
    export FOX_VARIANT="A12"
    export FOX_BUILD_TYPE="Stable"
-   export OF_MAINTAINER=Teletubies
+   export FOX_MAINTAINER="Teletubies"
  
  # Store settings at /data/recovery instead of internal storage
  ##export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
